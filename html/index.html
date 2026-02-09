@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias AI - Inteligencia Artificial en Español</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e94560;
+        }
+        
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 2px solid #e94560;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            color: #a0a0a0;
+            font-size: 1.1rem;
+        }
+        
+        .last-updated {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .news-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(233, 69, 96, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(233, 69, 96, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .news-card:hover::before {
+            left: 100%;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            border-color: #e94560;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.2);
+        }
+        
+        .news-card h2 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .news-card .summary {
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .news-source {
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #888;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(233, 69, 96, 0.3);
+            border-top-color: #e94560;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .error {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #e94560;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(233, 69, 96, 0.2);
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-card {
+                padding: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🤖 Noticias AI</h1>
+        <p>Las últimas noticias sobre Inteligencia Artificial en español</p>
+        <div class="last-updated" id="lastUpdated">Cargando...</div>
+    </header>
+    
+    <main>
+        <div id="newsContainer" class="news-grid">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Cargando noticias...</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Actualizado diariamente desde fuentes RSS | <a href="#" onclick="location.reload()">Actualizar ahora</a></p>
+    </footer>
+    
+    <script>
+        async function loadNews() {
+            const container = document.getElementById('newsContainer');
+            const lastUpdated = document.getElementById('lastUpdated');
+            
+            try {
+                const response = await fetch('news.json');
+                if (!response.ok) {
+                    throw new Error('No se pudieron cargar las noticias');
+                }
+                
+                const data = await response.json();
+                
+                // Update last updated time
+                if (data.lastUpdated) {
+                    const date = new Date(data.lastUpdated);
+                    lastUpdated.textContent = `Última actualización: ${date.toLocaleString('es-ES')}`;
+                }
+                
+                // Clear loading
+                container.innerHTML = '';
+                
+                // Render news
+                if (data.news && data.news.length > 0) {
+                    data.news.forEach(item => {
+                        const card = document.createElement('article');
+                        card.className = 'news-card';
+                        card.onclick = () => window.open(item.link, '_blank');
+                        
+                        const date = new Date(item.date);
+                        const dateStr = date.toLocaleDateString('es-ES', {
+                            day: 'numeric',
+                            month: 'short',
+                            year: 'numeric'
+                        });
+                        
+                        card.innerHTML = `
+                            <h2>${escapeHtml(item.title)}</h2>
+                            <p class="summary">${escapeHtml(item.summary)}</p>
+                            <div class="news-meta">
+                                <span class="news-source">${escapeHtml(item.source)}</span>
+                                <span>${dateStr}</span>
+                            </div>
+                        `;
+                        
+                        container.appendChild(card);
+                    });
+                } else {
+                    container.innerHTML = '<div class="error">No hay noticias disponibles en este momento.</div>';
+                }
+            } catch (error) {
+                console.error('Error loading news:', error);
+                container.innerHTML = `
+                    <div class="error">
+                        <h3>Error al cargar las noticias</h3>
+                        <p>${error.message}</p>
+                        <p style="margin-top: 1rem; font-size: 0.9rem;">Asegúrate de que el archivo news.json existe y tiene el formato correcto.</p>
+                    </div>
+                `;
+                lastUpdated.textContent = 'Error al cargar';
+            }
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Load news when page loads
+        document.addEventListener('DOMContentLoaded', loadNews);
+    </script>
+</body>
+</html>

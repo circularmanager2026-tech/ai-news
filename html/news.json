@@ -1,0 +1,76 @@
+{
+  "lastUpdated": "2026-02-09T16:27:00.544Z",
+  "count": 10,
+  "news": [
+    {
+      "title": "Gemini pudo hacer lo que ChatGPT no: convencerme de usar la IA. Así es como se ha convertido en una herramienta imprescindible",
+      "summary": "Durante los últimos años la \"inteligencia artificial\" se ha convertido en uno de los términos más nombrados por los fabricantes y los desarrolladores, y actualmente forma una parte importante de nuestros dispositivos móviles. El auge de los chatbots ...",
+      "link": "https://www.xatakandroid.com/inteligencia-artificial/gemini-pudo-hacer-que-chatgpt-no-convencerme-usar-ia-asi-como-se-ha-convertido-herramienta-imprescindible",
+      "date": "2025-12-14T16:41:04.000Z",
+      "source": "Xataka Android"
+    },
+    {
+      "title": "La Grokipedia de Elon Musk no es precisamente el mejor sitio para obtener información objetiva. A ChatGPT le da igual",
+      "summary": "La IA está ahogando a Wikipedia. No sólo se ha entrenado con su contenido, sino que las respuestas de IA le está robando gran parte del tráfico. Por si fuera poco, en octubre del año pasado le salió un competidor, la Grokipedia, creada íntegramente c...",
+      "link": "https://www.xataka.com/robotica-e-ia/grokipedia-esta-ganando-publico-inesperado-chatbots-chatgpt-que-usa-como-fuente",
+      "date": "2026-02-08T18:01:53.000Z",
+      "source": "Xataka"
+    },
+    {
+      "title": "Qué es Claude Code y qué puede hacer esta herramienta para programar con inteligencia artificial desde la terminal de tu ordenador",
+      "summary": "Vamos a explicarte qué es Claude Code o Claude Código, la herramienta de Anthropic para poder crear código con la inteligencia artificial directamente en la terminal de tu ordenador. Esto hará que no necesites instalar nada ni estar haciendo consulta...",
+      "link": "https://www.xataka.com/basics/que-claude-code",
+      "date": "2026-02-09T12:29:01.000Z",
+      "source": "Xataka"
+    },
+    {
+      "title": "El planazo pionero de China para evitar que los chatbots de IA aconsejen mal: recurrir a los humanos cuando hay temas espinosos",
+      "summary": "China planea restringir que los chatbots con inteligencia artificial influyan en las emociones humanas de maneras que puedan llevar al suicidio o la autolesión o incluso a apostar en juegos de azar, según un borrador de las normas que se han hecho pú...",
+      "link": "https://www.genbeta.com/inteligencia-artificial/china-tiene-plan-para-evitar-que-chatbots-ia-manipulen-emociones-incluso-proponen-derivar-conversacion-a-humanos",
+      "date": "2025-12-29T09:20:23.000Z",
+      "source": "Genbeta"
+    },
+    {
+      "title": "Los barcos de la \"flota fantasma\" petrolera apagan sus GPS para no ser detectados. Malasia va a cazarlos con drones",
+      "summary": "En las aguas cristalinas del sudeste asiático, donde el Estrecho de Malaca se encuentra con el Mar de China Meridional, se está librando una guerra que no aparece en los partes militares convencionales. No hay trincheras, pero sí cascos oxidados que ...",
+      "link": "https://www.xataka.com/magnet/drones-flota-fantasma-malasia-despliega-su-arsenal-tecnologico-para-cazar-a-petroleros-que-apagan-gps",
+      "date": "2026-02-08T17:31:53.000Z",
+      "source": "Xataka"
+    },
+    {
+      "title": "La IA ha desatado la furia de este creador del lenguaje Go. Sólo ha necesitado enviarle un e-mail de agradecimiento ",
+      "summary": "Un simple correo electrónico de agradecimiento. Un gesto que, en apariencia, debería resultar inofensivo (en el peor de los casos) e incluso halagador. Sin embargo, el contexto lo es todo, y en plena explosión de la IA generativa, ese mismo gesto ha ...",
+      "link": "https://www.genbeta.com/inteligencia-artificial/ia-ha-desatado-furia-este-creador-lenguaje-go-solo-ha-necesitado-enviarle-e-mail-agradecimiento",
+      "date": "2025-12-29T14:58:02.000Z",
+      "source": "Genbeta"
+    },
+    {
+      "title": "La vida en tres puntos clave: la IA nos ahorra tiempo pero nos quita la historia",
+      "summary": "Hace unos días me sorprendí a mí mismo haciendo algo que hace cinco años me habría parecido un sacrilegio. Tenía delante un reportaje de esos que guardas para leer el domingo por la mañana. 5.000 palabras, una firma de prestigio y un diseñazo. Un tex...",
+      "link": "https://www.xataka.com/robotica-e-ia/vida-tres-puntos-clave-ia-nos-ahorra-tiempo-nos-quita-historia",
+      "date": "2026-02-09T08:01:53.000Z",
+      "source": "Xataka"
+    },
+    {
+      "title": "La IA trae más tensión: los empleados quieren trabajar menos porque la IA ayuda. Los CEO exigen a la gente ser máquinas sin descanso",
+      "summary": "El equilibrio entre la vida laboral y la personal vs las jornadas 996 que están exigiendo mucha empresas de IA tanto en Estados Unidos como en Europa. Hay una distancia importante entre lo que los empleados han empezado a apreciar con el paso del tie...",
+      "link": "https://www.genbeta.com/inteligencia-artificial/ceo-cada-vez-exigen-horas-trabajo-empleados-valoran-que-nunca-ocio-ia-tiene-mucha-culpa-ambos",
+      "date": "2025-12-27T11:06:17.000Z",
+      "source": "Genbeta"
+    },
+    {
+      "title": "Un cofundador del campeón europeo de la IA 'open source' usó millones de libros con copyright cuando trabajaba en los modelos de Meta ",
+      "summary": "La IA nos ofrece modelos cada vez más potentes y capaces, pero ¿de dónde provienen los datos que hacen todo eso posible? Documentos judiciales, correos internos y testimonios de antiguos empleados, revelados recientemente por el medio francés Mediapa...",
+      "link": "https://www.genbeta.com/inteligencia-artificial/cofundador-campeon-europeo-ia-open-source-uso-millones-libros-copyright-cuando-trabajaba-modelos-meta",
+      "date": "2025-12-26T13:58:13.000Z",
+      "source": "Genbeta"
+    },
+    {
+      "title": "OpenClaw es una de las IA más fascinantes y \"peligrosas\" del momento. Una empresa malagueña ha acudido en su rescate",
+      "summary": "En 2025 tuvimos un 'momento DeepSeek' y en 2026 estamos teniendo un 'momento OpenClaw'. Este agente de IA es súper potente, pero también súper inseguro. Hay no obstante buenas noticias, porque la empresa malagueña VirusTotal se ha aliado con el proye...",
+      "link": "https://www.xataka.com/robotica-e-ia/openclaw-ia-viral-fascinante-peligrosa-momento-eso-ultimo-se-ha-aliado-malaguena-virustotal",
+      "date": "2026-02-09T08:31:53.000Z",
+      "source": "Xataka"
+    }
+  ]
+}

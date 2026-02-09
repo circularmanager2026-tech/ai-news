@@ -1,0 +1,13 @@
+{
+  "name": "ai-news-fetcher",
+  "version": "1.0.0",
+  "description": "Obtiene noticias sobre AI de fuentes RSS en español",
+  "main": "fetch-news.js",
+  "scripts": {
+    "fetch": "node fetch-news.js",
+    "start": "node fetch-news.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}
